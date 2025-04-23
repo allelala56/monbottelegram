@@ -1,7 +1,6 @@
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 
-# Ton token Telegram ici
 BOT_TOKEN = "7115175533:AAHcFYSUzqagDMuxOttx4jLUNCDdlVyvtZo"
 SUPPORT_USERNAME = "blackdjdj"
 SOLANA_ADDRESS = "DVaoLjuk8qsc3KbM84JoCHNSFLuVpwtLsD6ac6jWuzWx"
@@ -19,18 +18,11 @@ def start(message):
 @bot.message_handler(func=lambda m: "services" in m.text.lower())
 def services(message):
     txt = (
-        "<b>📦 Services disponibles :</b>
-
-"
-        "🔹 Spam sur lien : 25€ / 1k
-"
-        "🔹 Technique Pristelle : 50€ (3 SIM remboursables)
-"
-        "🔹 Logs : Facebook, Amazon, Netflix, Mobiax → 10€ par log
-
-"
-        f"💰 Paiement Solana : <code>{SOLANA_ADDRESS}</code>
-"
+        "<b>📦 Services disponibles :</b>\n\n"
+        "🔹 Spam sur lien : 25€ / 1k\n"
+        "🔹 Technique Pristelle : 50€ (3 SIM remboursables)\n"
+        "🔹 Logs : Facebook, Amazon, Netflix, Mobiax → 10€ par log\n\n"
+        f"💰 Paiement Solana : <code>{SOLANA_ADDRESS}</code>\n"
         f"📩 Contact : @{SUPPORT_USERNAME}"
     )
     bot.send_message(message.chat.id, txt, parse_mode="HTML")
